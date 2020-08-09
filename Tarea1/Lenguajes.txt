@@ -1,0 +1,36 @@
+Diferencia entre lenguajes imperativos y declarativos
+
+Los lenguajes imperativos son aquellos en los que se detallan especifcamente las instrucciones y 
+procesos para poder llegar a un objetivo/resultado. Los lenguajes declarativos son aquellos que 
+parten de el resultado y desde ahí comienzan a buscar cuales son las opciones disponibles para lograr
+el resultado de manera optima.
+
+La diferencia principal esta en el enfoque, ya que en una se empieza desde una idea y se van describiendo
+los pasos para alcanzarla mientras que en la otra se toma el resultado y se construye en base a herrramientas
+o piezas previamente creadas en donde no importa como es que fueron hechas o como se estructuran.
+
+Ejemplos:
+
+Factorial en lenguaje declarativo (Prolog)
+factorial(0, 1). % paso base.
+factorial(N, F) :- N>0, N1 is N - 1, factorial(N1, F1), F is N * F1. % Paso recursivo.
+
+Factorial en lenguaje imperativo (C)
+int main() {
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Ingrese un entero: ");
+    scanf("%d", &n);
+
+    // Muestra error si el entero es negativo
+    if (n < 0)
+        printf("Error! Factorial de un negativo no existe.");
+    else {
+        for (i = 1; i <= n; ++i) {
+            fact *= i;
+        }
+        printf("Factorial de %d = %llu", n, fact);
+    }
+
+    return 0;
+}
